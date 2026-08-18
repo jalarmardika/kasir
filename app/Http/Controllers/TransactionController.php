@@ -98,6 +98,7 @@ class TransactionController extends Controller
     	$transaction->user_id = auth()->user()->id;
     	$transaction->invoice = 'INV-' . mt_rand(1,5) . time();
     	$transaction->profit = $this->getTotalProfit();
+        $transaction->date = date("Y-m-d H:i:s");
     	$transaction->total = $this->getTotalCart();
     	$transaction->paid = $request->paid;
     	$transaction->return = $request->return;
